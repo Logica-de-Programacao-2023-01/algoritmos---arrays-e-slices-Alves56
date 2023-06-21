@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	slice := make([]int, 10)
+
+	for i := 0; i < 10; i++ {
+		fmt.Printf("Digite o número %d: ", i+1)
+		fmt.Scanln(&slice[i])
+	}
+
+	minimo := math.MaxInt64
+	maximo := math.MinInt64
+
+	for _, valor := range slice {
+		if valor < minimo {
+			minimo = valor
+		}
+		if valor > maximo {
+			maximo = valor
+		}
+	}
+
+	fmt.Println("Valor mínimo:", minimo)
+	fmt.Println("Valor máximo:", maximo)
+}
