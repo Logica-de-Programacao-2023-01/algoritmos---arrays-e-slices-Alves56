@@ -1,0 +1,39 @@
+package main
+
+import "fmt"
+
+func main() {
+	var n int
+	fmt.Print("Digite o tamanho dos arrays: ")
+	fmt.Scanln(&n)
+
+	array1 := lerArray(n)
+	array2 := lerArray(n)
+	soma := somarArrays(array1, array2)
+
+	fmt.Println("Array 1:", array1)
+	fmt.Println("Array 2:", array2)
+	fmt.Println("Soma dos arrays:", soma)
+}
+
+func lerArray(n int) []int {
+	array := make([]int, n)
+
+	for i := 0; i < n; i++ {
+		fmt.Printf("Digite o valor para o índice %d: ", i)
+		fmt.Scanln(&array[i])
+	}
+
+	return array
+}
+
+func somarArrays(array1, array2 []int) []int {
+	tamanho := len(array1)
+	soma := make([]int, tamanho)
+
+	for i := 0; i < tamanho; i++ {
+		soma[i] = array1[i] + array2[i]
+	}
+
+	return soma
+}
