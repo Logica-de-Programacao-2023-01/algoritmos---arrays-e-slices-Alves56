@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func main() {
+	slice := make([]int, 8)
+
+	for i := 0; i < 8; i++ {
+		fmt.Printf("Digite o número %d: ", i+1)
+		fmt.Scanln(&slice[i])
+	}
+
+	var indice1, indice2 int
+	fmt.Print("Digite o primeiro índice: ")
+	fmt.Scanln(&indice1)
+	fmt.Print("Digite o segundo índice: ")
+	fmt.Scanln(&indice2)
+
+	// Verifica se os índices informados são válidos
+	if indice1 >= 0 && indice1 < len(slice) && indice2 >= 0 && indice2 < len(slice) {
+		// Troca os elementos de posição
+		slice[indice1], slice[indice2] = slice[indice2], slice[indice1]
+	}
+
+	fmt.Println("Slice resultante:", slice)
+}
+Neste código, criamos um slice de inteiros com tamanho 8 usando a função make.
+
+Utilizamos um loop for para iterar 8 vezes e solicitar ao usuário que informe um número em cada iteração. Armazenamos o número fornecido no slice na posição correspondente.
+
+Em seguida, solicitamos ao usuário que informe dois índices de elementos que devem ser trocados de posição. Armazenamos esses índices nas variáveis indice1 e indice2.
+
+Antes de realizar a troca de posição, verific
+
+
+
