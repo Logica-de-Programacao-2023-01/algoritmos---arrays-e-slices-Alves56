@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func main() {
+	slice := make([]int, 5)
+
+	for i := 0; i < 5; i++ {
+		fmt.Printf("Digite o número inteiro %d: ", i+1)
+		var numero int
+		fmt.Scanln(&numero)
+
+		if !contains(slice, numero) {
+			slice = append(slice, numero)
+		}
+	}
+
+	fmt.Println("Slice resultante:", slice)
+}
+
+func contains(slice []int, numero int) bool {
+	for _, elemento := range slice {
+		if elemento == numero {
+			return true
+		}
+	}
+	return false
+}
