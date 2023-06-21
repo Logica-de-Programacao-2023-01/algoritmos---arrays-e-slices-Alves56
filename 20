@@ -1,0 +1,41 @@
+package main
+
+import "fmt"
+
+func main() {
+	array := lerArray()
+	estaOrdenado := verificarOrdenacao(array)
+
+	if estaOrdenado {
+		fmt.Println("O array está ordenado em ordem crescente.")
+	} else {
+		fmt.Println("O array não está ordenado em ordem crescente.")
+	}
+}
+
+func lerArray() []int {
+	var n int
+	fmt.Print("Digite o tamanho do array: ")
+	fmt.Scanln(&n)
+
+	array := make([]int, n)
+	fmt.Println("Digite os elementos do array:")
+
+	for i := 0; i < n; i++ {
+		fmt.Scan(&array[i])
+	}
+
+	return array
+}
+
+func verificarOrdenacao(array []int) bool {
+	n := len(array)
+
+	for i := 1; i < n; i++ {
+		if array[i] < array[i-1] {
+			return false
+		}
+	}
+
+	return true
+}
